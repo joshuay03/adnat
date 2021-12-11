@@ -16,4 +16,8 @@
 #
 class User < ApplicationRecord
   has_many :shifts, through: :organisation
+
+  validates_presence_of :name
+  validates_presence_of :email_address
+  validates_presence_of :password
 end
