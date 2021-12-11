@@ -15,4 +15,5 @@
 #  index_users_on_organisation_id  (organisation_id)
 #
 class User < ApplicationRecord
+  has_many :shifts, through: :organisation
 end
