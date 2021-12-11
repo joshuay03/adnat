@@ -9,4 +9,6 @@
 #  updated_at  :datetime         not null
 #
 class Organisation < ApplicationRecord
+  validates_presence_of :name
+  validates_presence_of :hourly_rate
 end
