@@ -19,5 +19,5 @@ class User < ApplicationRecord
 
   validates_presence_of :name
   validates_presence_of :email_address
-  validates_presence_of :password
+  validates :password, presence: true, :length => { :minimum => 6 }
 end
