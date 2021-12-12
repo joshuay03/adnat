@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby on Rails Backend Challenge for Tanda
 
-Things you may want to cover:
+Installation and setup:
+* Clone repository
+* Run command 'bundle install'
+* Run command 'bin/rails server'
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Optional exercises implemented:
+1. Users details (easy)
+2. Modifying/Deleting shifts (easy)
