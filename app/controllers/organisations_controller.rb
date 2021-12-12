@@ -46,6 +46,11 @@ class OrganisationsController < ApplicationController
     redirect_to current_user
   end
 
+  def leave
+    current_user.update(organisation_id: nil)
+    redirect_to current_user
+  end
+
   private
 
   def command_class
