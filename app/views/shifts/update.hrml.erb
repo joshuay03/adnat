@@ -1,0 +1,31 @@
+<div class="form-wrapper">
+  <span class="title">Modify Shift at <%= @organisation.name %></span>
+
+  <%= form_for(@shift, url: '') do |f| %>
+
+    <%= f.label :start %>
+    <div class="input-wrapper">
+      <%= f.datetime_field :start, value: @shift.start, class: 'form-control' %>
+    </div>
+
+    <%= f.label :finish %>
+    <div class="input-wrapper">
+      <%= f.datetime_field :finish, value: @shift.finish, class: 'form-control' %>
+    </div>
+
+    <%= f.label :break_length %> (mnts)
+    <div class="input-wrapper">
+      <%= f.number_field :break_length, value: @shift.break_length, class: 'form-control' %>
+    </div>
+
+    <div class="btn-wrapper">
+      <%= f.submit "Update Shift", class: "btn btn-primary" %>
+    </div>
+
+    <div class="btn-wrapper">
+      <a href=<%= "/view_shifts/#{@organisation.id}" %>>
+        <input class="btn btn-secondary" name="cancel" type="button" value="Cancel" />
+      </a>
+    </div>
+  <% end %>
+</div>

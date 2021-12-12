@@ -50,6 +50,11 @@ th, td {
   text-align: center;
 }
 
+.blank-cell {
+  width: auto;
+  border: none;
+}
+
 .form-wrapper {
   width: 30rem;
   display: flex;
@@ -128,6 +133,14 @@ th, td {
 
     &:hover {
       background-color: honeydew;
+    }
+  }
+
+  &-delete {
+    background-color: red;
+
+    &:hover {
+      background-color: darkred;
     }
   }
 }

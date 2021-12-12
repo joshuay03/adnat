@@ -36,6 +36,16 @@
         <td>
           <%= shift.cost %>
         </td>
+        <td class="blank-cell">
+          <a href=<%= "/edit_shift/#{shift.id}" %>>
+            <input class="btn btn-tertiary" name="modify_shift" type="button" value="Modify" />
+          </a>
+        </td>
+        <td class="blank-cell">
+          <a href=<%= "/delete_shift/#{shift.id}" %>>
+            <input class="btn btn-tertiary btn-delete" name="delete_shift" type="button" value="Delete" />
+          </a>
+        </td>
       </tr>
     <% end %>
   </table>

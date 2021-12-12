@@ -1,19 +1,28 @@
 class ShiftsController < ApplicationController
     def new
       @shift = Shift.new
-      @organisation = organisation
+      organisation
       @target = @shift
     end
 
     def create
       command = command_class::Create.call(params[:organisation_id], current_user.id, create_params)
       @shift = command.result
-      @organisation = organisation
+      organisation
       if command.success? && @shift.errors.empty?
-        redirect_to current_user
+        render 'organisations/show', id: organisation.id
       else
         @target = @shift
         render 'new'
+      end
+    end
+
+    def destroy
+      @organisation_id = Shift.find_by(id: params[:id]).organisation_id
+      command = command_class::Destroy.call(params[:id])
+      if command.success?
+        organisation
+        render 'organisations/show', id: @organisation_id
       end
     end
 
@@ -28,6 +37,10 @@ class ShiftsController < ApplicationController
     end
 
     def organisation
-      Organisation.find_by(id: params[:organisation_id])
+      if params[:organisation_id].present?
+        @organisation ||= Organisation.find_by(id: params[:organisation_id])
+      else
+        @organisation ||= Organisation.find_by(id: @organisation_id)
+      end
     end
 end
