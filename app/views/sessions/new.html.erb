@@ -1,0 +1,18 @@
+<div class="form-wrapper">
+  <span class="title">Log In</span>
+
+  <%= render 'shared/error_messages' %>
+
+  <%= form_for(:session, url: login_path) do |f| %>
+
+    <%= f.label :email_address %>
+    <%= f.email_field :email_address, class: 'form-control' %>
+
+    <%= f.label :password %>
+    <%= f.password_field :password, class: 'form-control' %>
+
+    <div class="btn-wrapper">
+      <%= f.submit "Log In", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
