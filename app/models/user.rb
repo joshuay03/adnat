@@ -22,7 +22,7 @@ class User < ApplicationRecord
   validates :password, presence: true, :length => { :minimum => 6 }
 
   def authenticate(password)
-    return nil unless self.password == password
+    self.errors.add(:password, 'incorrect') unless self.password == password
     self
   end
 end

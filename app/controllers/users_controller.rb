@@ -15,12 +15,11 @@ class UsersController < ApplicationController
   def show
     command = command_class::Show.call(params[:id])
     @user = command.result
-    if command.success? && @user.present?
-      render json: command.result,
-             root: 'data',
-             status: :ok
+    if command.success? && @user.present? && @user == current_user
+      render 'show'
     else
-      render json: 'User not found', status: :not_found
+      new
+      render 'sessions/new'
     end
   end
 
