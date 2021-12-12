@@ -20,4 +20,9 @@ class User < ApplicationRecord
   validates_presence_of :name
   validates_presence_of :email_address
   validates :password, presence: true, :length => { :minimum => 6 }
+
+  def authenticate(password)
+    return nil unless self.password == password
+    self
+  end
 end
