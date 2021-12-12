@@ -1,22 +1,30 @@
 class SessionsController < ApplicationController
   def new
-    @user = User.new
+    if current_user.present?
+      @user = current_user
+      redirect_to @user
+    else
+      @user = User.new
+      render 'new'
+    end
   end
 
   def create
     command = command_class::Create.call(create_params)
     @user = command.result
-    if command.success? && @user.present?
-      if @user.errors.empty?
-        log_in @user
-        redirect_to @user
-      else
-        render 'new'
-      end
+    if command.success? && @user.present? && @user.errors.empty?
+      log_in @user
+      redirect_to @user
     else
-      new
+      @user = User.new
       render 'new'
     end
+  end
+
+  def destroy
+    log_out @user
+    @user = User.new
+    render 'new'
   end
 
   private
