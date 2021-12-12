@@ -44,9 +44,13 @@
     <% end %>
   <% end %>
 
+  <a href="/create_organisation">
+    <input class="btn btn-tertiary" name="join_organisation" type="button" value="Create Org" />
+  </a>
+
   <div class="btn-wrapper">
-    <a href="/create_organisation">
-      <input class="btn btn-secondary" name="join_organisation" type="button" value="Create Org" />
+    <a href=<%= "/edit_profile/#{@user.id}" %>>
+      <input class="btn btn-secondary" name="edit_profile" type="button" value="Edit Profile" />
     </a>
   </div>
 

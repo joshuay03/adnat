@@ -1,0 +1,25 @@
+<div class="form-wrapper">
+  <span class="title">Edit <%= current_user.name %></span>
+
+  <%= form_for(current_user) do |f| %>
+    <%= f.label :name %>
+    <div class="input-wrapper">
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+
+    <%= f.label :email_address %>
+    <div class="input-wrapper">
+      <%= f.email_field :email_address, class: 'form-control' %>
+    </div>
+
+    <div class="btn-wrapper">
+      <%= f.submit "Update Profile", class: "btn btn-primary" %>
+    </div>
+
+    <div class="btn-wrapper">
+      <a href=<%= "/current/#{current_user.id}" %>>
+        <input class="btn btn-secondary" name="cancel" type="button" value="Cancel" />
+      </a>
+    </div>
+  <% end %>
+</div>

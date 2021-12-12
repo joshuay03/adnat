@@ -9,7 +9,7 @@ module Users
 
     def call
       return nil unless user.present?
-      user.update!(@params)
+      user.update(@params)
     end
 
     private

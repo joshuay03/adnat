@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   root 'users#new'
   get 'signup' => 'users#new'
   get 'current/:id' => 'users#show'
+  get 'edit_profile/:id' => 'users#edit'
+  post 'edit_profile/:id' => 'users#update'
 
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'

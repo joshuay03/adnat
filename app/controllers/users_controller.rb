@@ -40,17 +40,17 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @target = current_user
+    render 'update'
+  end
+
   def update
     command = command_class::Update.call(params[:id], update_params)
     if command.success? && command.result.present?
-      if command.errors.empty?
-        render json: 'User updated successfully',
-               status: :ok
-      else
-        render json: command.errors.to_h, status: :unprocessable_entity
-      end
+      redirect_to current_user
     else
-      render json: 'User not found', status: :not_found
+      render 'update'
     end
   end
 
@@ -83,6 +83,6 @@ class UsersController < ApplicationController
   end
 
   def update_params
-    params.permit(:name, :email_address, :password)
+    params.require(:user).permit(:name, :email_address)
   end
 end
