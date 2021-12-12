@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'users#new'
   get 'signup' => 'users#new'
   get 'current/:id' => 'users#show'
 
@@ -12,6 +13,9 @@ Rails.application.routes.draw do
   post 'edit_organisation/:id' => 'organisations#update'
   get 'join_organisation/:id' => 'organisations#join'
   get 'view_shifts/:id' => 'organisations#show'
+
+  get 'create_shift/:organisation_id' => 'shifts#new'
+  post 'create_shift/:organisation_id' => 'shifts#create'
 
   resources :users
 end
