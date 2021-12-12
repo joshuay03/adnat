@@ -4,6 +4,7 @@ module SessionsHelper
     session[:user_id] = user.id
   end
 
+  # Logs out the given user
   def log_out(user)
     session[:user_id] = nil
   end

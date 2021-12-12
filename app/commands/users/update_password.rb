@@ -21,6 +21,7 @@ module Users
 
     private
 
+    # Check if password confirmation matches password
     def password_confirmation_valid
       @params[:password] == @params[:password_confirmation]
     end
