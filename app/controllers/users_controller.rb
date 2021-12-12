@@ -5,7 +5,8 @@ class UsersController < ApplicationController
     if command.success?
       render json: command.result,
              root: 'data',
-             status: :ok
+             status: :ok,
+             each_serializer: serializer_class::IndexSerializer
     else
       render json: command.errors.to_h, status: :unprocessable_entity
     end
@@ -69,6 +70,10 @@ class UsersController < ApplicationController
   private
 
   def command_class
+    ::Users
+  end
+
+  def serializer_class
     ::Users
   end
 
