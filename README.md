@@ -8,5 +8,5 @@ Installation and setup:
 * Run command 'bin/rails server'
 
 Optional exercises implemented:
-1. Users details (easy)
-2. Modifying/Deleting shifts (easy)
+1. Users details
+2. Modifying/Deleting shifts
