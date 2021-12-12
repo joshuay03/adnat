@@ -66,6 +66,6 @@ class OrganisationsController < ApplicationController
   end
 
   def organisation
-    @organisation = Organisation.find_by(id: params[:id])
+    @organisation ||= Organisation.find_by(id: params[:id])
   end
 end
