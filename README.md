@@ -1,7 +1,5 @@
 # Adnat
 
-Ruby on Rails Backend Challenge for Tanda
-
 Installation and setup:
 * Clone repository
 * Run command 'bundle install'
