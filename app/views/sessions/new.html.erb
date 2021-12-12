@@ -6,10 +6,14 @@
   <%= form_for(:session, url: login_path) do |f| %>
 
     <%= f.label :email_address %>
-    <%= f.email_field :email_address, class: 'form-control' %>
+    <div class="input-wrapper">
+      <%= f.email_field :email_address, class: 'form-control' %>
+    </div>
 
     <%= f.label :password %>
-    <%= f.password_field :password, class: 'form-control' %>
+    <div class="input-wrapper">
+      <%= f.password_field :password, class: 'form-control' %>
+    </div>
 
     <div class="btn-wrapper">
       <%= f.submit "Log In", class: "btn btn-primary" %>

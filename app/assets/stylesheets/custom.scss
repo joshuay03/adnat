@@ -14,7 +14,7 @@ label {
 }
 
 input, textarea, select, .uneditable-input {
-  width: 93.7%;
+  width: 20rem;
   border: 2px solid black;
   border-radius: 5px;
   margin-bottom: 2rem;
@@ -27,10 +27,25 @@ input {
   padding-bottom: 0.1rem;
 }
 
+a {
+  text-decoration: none;
+}
+
 .form-wrapper {
-  width: 20rem;
+  width: 30rem;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+}
+
+.main-wrapper {
+  width: 25rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.input-wrapper {
+  width: 100%;
 }
 
 .title {
@@ -38,6 +53,11 @@ input {
   text-align: center;
   font-size: 3rem;
   margin-bottom: 1rem;
+
+  &-secondary {
+    font-size: 1.5rem;
+    text-align: left;
+  }
 }
 
 .error_explanation {
@@ -74,4 +94,19 @@ input {
       background-color: honeydew;
     }
   }
+
+  &-tertiary {
+    width: 4rem;
+    background-color: thistle;
+    margin-left: 1rem;
+
+    &:hover {
+      background-color: honeydew;
+    }
+  }
+}
+
+.flex-item {
+  width: 100%;
+  margin-bottom: 2rem;
 }
