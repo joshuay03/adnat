@@ -19,12 +19,21 @@
       <ul>
         <li>
           <%= organisation.name %>
+          <% if @user.organisation_id.present? %>
+            <a href=<%= "/view_shifts/#{organisation.id}" %>>
+              <input class="btn btn-tertiary" name="join_organisation" type="button" value="View Shifts" />
+            </a>
+          <% end %>
           <a href=<%= "/edit_organisation/#{organisation.id}" %>>
             <input class="btn btn-tertiary" name="edit_organisation" type="button" value="Edit" />
           </a>
           <% if !@user.organisation_id.present? %>
             <a href=<%= "/join_organisation/#{organisation.id}" %>>
               <input class="btn btn-tertiary" name="join_organisation" type="button" value="Join" />
+            </a>
+          <% else %>
+            <a href=<%= "/leave_organisation/#{organisation.id}" %>>
+              <input class="btn btn-tertiary" name="leave_organisation" type="button" value="Leave" />
             </a>
           <% end %>
         </li>
