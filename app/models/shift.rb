@@ -30,18 +30,22 @@ class Shift < ApplicationRecord
   validates :user_id, presence: true
 
   def date
+    return '' unless self.start.present?
     self.start.strftime("%d/%m/%Y")
   end
 
   def start_time
+    return '' unless self.start.present?
     self.start.strftime("%I:%M %p")
   end
 
   def finish_time
+    return '' unless self.finish.present?
     self.finish.strftime("%I:%M %p")
   end
 
   def hours_worked
+    return '' unless self.start.present? && self.finish.present?
     minutes_to_hours(
       ((self.finish.hour * 60) + (self.finish.min)) -
       ((self.start.hour * 60) + (self.start.min)) -
@@ -50,6 +54,7 @@ class Shift < ApplicationRecord
   end
 
   def cost
+    return '' unless self.hours_worked.present?
     "$#{hours_worked * hourly_rate}"
   end
 

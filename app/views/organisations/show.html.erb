@@ -39,4 +39,16 @@
       </tr>
     <% end %>
   </table>
+
+  <div class="btn-wrapper">
+    <a href=<%= "/create_shift/#{@organisation.id}" %>>
+      <input class="btn btn-primary" name="create_shift" type="button" value="Create Shift" />
+    </a>
+  </div>
+
+  <div class="btn-wrapper">
+    <a href=<%= "/current/#{current_user.id}" %>>
+      <input class="btn btn-secondary" name="back" type="button" value="Back" />
+    </a>
+  </div>
 </div>

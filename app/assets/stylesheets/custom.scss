@@ -40,6 +40,10 @@ li {
   width: 21rem;
 }
 
+table {
+  margin-bottom: 4rem;
+}
+
 th, td {
   width: 9.6rem;
   border: 1px solid darkolivegreen;
@@ -72,7 +76,7 @@ th, td {
 .title {
   width: 100%;
   text-align: center;
-  font-size: 3rem;
+  font-size: 2.8rem;
   margin-bottom: 1rem;
 
   &-secondary {
@@ -85,7 +89,7 @@ th, td {
   width: 100%;
   border: 2px solid red;
   border-radius: 8px;
-  padding: 0 0.4rem;
+  padding: 1rem 1rem;
   color: red;
   margin: 0 4.5rem;
   margin-bottom: 2rem;
