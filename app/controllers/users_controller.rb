@@ -54,6 +54,7 @@ class UsersController < ApplicationController
     end
   end
 
+  # Change the users password
   def edit_password
     new
     render 'update_password'

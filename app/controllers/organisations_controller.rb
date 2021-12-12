@@ -41,11 +41,13 @@ class OrganisationsController < ApplicationController
     end
   end
 
+  # Add a user to the organisation
   def join
     current_user.update(organisation_id: params[:id])
     redirect_to current_user
   end
 
+  # Remove a user to the organisation
   def leave
     current_user.update(organisation_id: nil)
     redirect_to current_user
