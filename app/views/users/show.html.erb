@@ -1,0 +1,46 @@
+<div class="main-wrapper">
+  <span class="title"><%= @user.name %></span>
+
+  <% if !@user.organisation_id.present? %>
+    <p>
+      You aren't a member of any organisations.
+      <br>
+      Join an organisation or create a new one.
+    </p>
+  <% end %>
+
+  <span class="title-secondary">Organisations</span>
+  <% if Organisation.all.length == 0 %>
+    <span class="flex-item">
+      No existing organisations.
+    </span>
+  <% else %>
+    <% Organisation.all.each do |organisation| %>
+      <ul>
+        <li>
+          <%= organisation.name %>
+          <a href=<%= "/edit_organisation/#{organisation.id}" %>>
+            <input class="btn btn-tertiary" name="edit_organisation" type="button" value="Edit" />
+          </a>
+          <% if !@user.organisation_id.present? %>
+            <a href=<%= "/join_organisation/#{organisation.id}" %>>
+              <input class="btn btn-tertiary" name="join_organisation" type="button" value="Join" />
+            </a>
+          <% end %>
+        </li>
+      </ul>
+    <% end %>
+  <% end %>
+
+    <div class="btn-wrapper">
+      <a href="/create_organisation">
+        <input class="btn btn-secondary" name="join_organisation" type="button" value="Create Org" />
+      </a>
+    </div>
+
+  <div class="btn-wrapper">
+    <a href="/logout">
+      <input class="btn btn-secondary" name="logout" type="button" value="Log Out" />
+    </a>
+  </div>
+</div>
