@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get 'current/:id' => 'users#show'
   get 'edit_profile/:id' => 'users#edit'
   post 'edit_profile/:id' => 'users#update'
+  get 'forgot_password' => 'users#edit_password'
+  post 'forgot_password' => 'users#update_password'
 
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'

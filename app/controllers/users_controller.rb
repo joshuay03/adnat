@@ -54,6 +54,24 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit_password
+    new
+    render 'update_password'
+  end
+
+  def update_password
+    command = command_class::UpdatePassword.call(update_password_params)
+    @user = command.result
+    binding.pry
+    if command.success? && @user.errors.empty?
+      new
+      render 'sessions/new'
+    else
+      @target = @user
+      render 'update_password'
+    end
+  end
+
   def destroy
     command = command_class::Destroy.call(params[:id])
     if command.success? && command.result.present?
@@ -84,5 +102,9 @@ class UsersController < ApplicationController
 
   def update_params
     params.require(:user).permit(:name, :email_address)
+  end
+
+  def update_password_params
+    params.require(:user).permit(:email_address, :password, :password_confirmation)
   end
 end
