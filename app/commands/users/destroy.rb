@@ -8,7 +8,7 @@ module Users
 
     def call
       return nil unless user.present?
-      user.delete!
+      user.delete
     end
 
     private
