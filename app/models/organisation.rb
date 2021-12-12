@@ -9,6 +9,6 @@
 #  updated_at  :datetime         not null
 #
 class Organisation < ApplicationRecord
-  validates_presence_of :name
-  validates_presence_of :hourly_rate
+  validates :name, presence: true
+  validates :hourly_rate, presence: true
 end

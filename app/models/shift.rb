@@ -23,7 +23,7 @@
 class Shift < ApplicationRecord
   belongs_to :organisation, class_name: "organisation", foreign_key: "organisation_id"
 
-  validates :start, presence :true
-  validates :finish, presence :true
-  validates :user_id, presence :true
+  validates :start, presence: true
+  validates :finish, presence: true
+  validates :user_id, presence: true
 end

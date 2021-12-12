@@ -17,8 +17,8 @@
 class User < ApplicationRecord
   has_many :shifts, through: :organisation
 
-  validates_presence_of :name
-  validates_presence_of :email_address
+  validates :name, presence: true
+  validates :email_address, presence: true
   validates :password, presence: true, :length => { :minimum => 6 }
 
   def authenticate(password)
