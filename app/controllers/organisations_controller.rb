@@ -7,15 +7,10 @@ class OrganisationsController < ApplicationController
   def create
     command = command_class::Create.call(create_params)
     @organisation = command.result
-    if command.success? && @organisation.present?
-      if @organisation.errors.empty?
-        redirect_to @user
-      else
-        @target = @organisation
-        render 'new'
-      end
+    if command.success? && @organisation.errors.empty?
+      redirect_to current_user
     else
-      new
+      @target = @organisation
       render 'new'
     end
   end
