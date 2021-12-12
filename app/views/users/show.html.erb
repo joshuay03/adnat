@@ -9,11 +9,11 @@
     </p>
   <% end %>
 
-  <span class="title-secondary">Organisations</span>
+  <span class="title title-secondary">Organisations</span>
   <% if Organisation.all.length == 0 %>
-    <span class="flex-item">
+    <label>
       No existing organisations.
-    </span>
+    </label>
   <% else %>
     <% Organisation.all.each do |organisation| %>
       <ul>

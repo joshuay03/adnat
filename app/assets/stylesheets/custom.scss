@@ -31,6 +31,15 @@ a {
   text-decoration: none;
 }
 
+ul {
+  margin: -0.7rem 0;
+  margin-left: 1rem;
+}
+
+li {
+  width: 21rem;
+}
+
 .form-wrapper {
   width: 30rem;
   display: flex;
@@ -97,7 +106,7 @@ a {
   }
 
   &-tertiary {
-    width: 4rem;
+    width: auto;
     background-color: thistle;
     margin-left: 0.1rem;
 
