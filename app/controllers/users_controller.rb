@@ -25,6 +25,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    @target = @user
   end
 
   def create

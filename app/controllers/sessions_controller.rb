@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
       redirect_to @user
     else
       @user = User.new
+      @target = @user
       render 'new'
     end
   end
@@ -17,6 +18,7 @@ class SessionsController < ApplicationController
       redirect_to @user
     else
       @user = User.new
+      @target = @user
       render 'new'
     end
   end
@@ -24,6 +26,7 @@ class SessionsController < ApplicationController
   def destroy
     log_out @user
     @user = User.new
+    @target = @user
     render 'new'
   end
 

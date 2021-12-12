@@ -1,6 +1,7 @@
 class OrganisationsController < ApplicationController
   def new
     @organisation = Organisation.new
+    @target = @organisation
   end
 
   def create
