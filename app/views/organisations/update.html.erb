@@ -1,0 +1,26 @@
+<div class="form-wrapper">
+  <span class="title">Edit <%= @organisation.name %></span>
+
+  <%= form_for(:organisation, url: "/edit_organisation/#{@organisation.id}") do |f| %>
+
+    <%= f.label :name %>
+    <div class="input-wrapper">
+      <%= f.text_field :name, value: @organisation.name, class: 'form-control' %>
+    </div>
+
+    <%= f.label :hourly_rate %>
+    <div class="input-wrapper">
+      <%= f.number_field :hourly_rate, step: 0.1, value: @organisation.hourly_rate, class: 'form-control' %>
+    </div>
+
+    <div class="btn-wrapper">
+      <%= f.submit "Update", class: "btn btn-primary" %>
+    </div>
+
+    <div class="btn-wrapper">
+      <a href=<%= "/current/#{current_user.id}" %>>
+        <input class="btn btn-secondary" name="signup" type="button" value="Cancel" />
+      </a>
+    </div>
+  <% end %>
+</div>
