@@ -17,12 +17,12 @@ Rails.application.routes.draw do
   post 'edit_organisation/:id' => 'organisations#update'
   get 'join_organisation/:id' => 'organisations#join'
   get 'leave_organisation/:id' => 'organisations#leave'
-  get 'view_shifts/:id' => 'organisations#show'
+  get 'view_organisation/:id' => 'organisations#show'
 
   get 'create_shift/:organisation_id' => 'shifts#new'
   post 'create_shift/:organisation_id' => 'shifts#create'
-  get 'edit_shift/:id' => 'organisations#edit'
-  post 'edit_shift/:id' => 'organisations#update'
+  get 'edit_shift/:id' => 'shifts#edit'
+  post 'edit_shift/:id' => 'shifts#update'
   get 'delete_shift/:id' => 'shifts#destroy'
 
   resources :users

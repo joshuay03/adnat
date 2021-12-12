@@ -21,7 +21,7 @@
           <%= organisation.name %>
 
           <% if @user.organisation_id.present? && @user.organisation_id == organisation.id %>
-            <a href=<%= "/view_shifts/#{organisation.id}" %>>
+            <a href=<%= "/view_organisation/#{organisation.id}" %>>
               <input class="btn btn-tertiary" name="view_shifts" type="button" value="View Shifts" />
             </a>
           <% end %>
