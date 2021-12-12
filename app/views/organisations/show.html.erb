@@ -1,0 +1,42 @@
+<div class="large-wrapper">
+  <span class="title"><%= @organisation.name %></span>
+
+  <span class="title title-secondary">Shifts:</span>
+
+  <table>
+    <tr>
+      <th><b>Employee Name</b></th>
+      <th><b>Shift Date</b></th>
+      <th><b>Start Time</b></th>
+      <th><b>Finish Time</b></th>
+      <th><b>Break Length (mnts)</b></th>
+      <th><b>Hours Worked</b></th>
+      <th><b>Shift Cost</b></th>
+    </tr>
+    <% Shift.where(organisation_id: @organisation.id).order('start ASC').each do |shift| %>
+      <tr>
+        <td>
+          <%= User.find_by(id: shift.user_id).name %>
+        </td>
+        <td>
+          <%= shift.date %>
+        </td>
+        <td>
+          <%= shift.start_time %>
+        </td>
+        <td>
+          <%= shift.finish_time %>
+        </td>
+        <td>
+          <%= shift.break_length %>
+        </td>
+        <td>
+          <%= shift.hours_worked %>
+        </td>
+        <td>
+          <%= shift.cost %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>

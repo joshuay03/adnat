@@ -40,6 +40,12 @@ li {
   width: 21rem;
 }
 
+th, td {
+  width: 9.6rem;
+  border: 1px solid darkolivegreen;
+  text-align: center;
+}
+
 .form-wrapper {
   width: 30rem;
   display: flex;
@@ -49,6 +55,12 @@ li {
 
 .main-wrapper {
   width: 25rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.large-wrapper {
+  width: 70rem;
   display: flex;
   flex-wrap: wrap;
 }

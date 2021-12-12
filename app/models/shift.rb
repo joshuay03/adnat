@@ -30,22 +30,46 @@ class Shift < ApplicationRecord
   validates :user_id, presence: true
 
   def date
-    'test'
+    self.start.strftime("%d/%m/%Y")
   end
 
   def start_time
-    ''
+    self.start.strftime("%I:%M %p")
   end
 
   def finish_time
-    ''
+    self.finish.strftime("%I:%M %p")
   end
 
   def hours_worked
-    ''
+    minutes_to_hours(
+      ((self.finish.hour * 60) + (self.finish.min)) -
+      ((self.start.hour * 60) + (self.start.min)) -
+      (self.break_length)
+    ).round(2)
   end
 
   def cost
-    ''
+    "$#{hours_worked * hourly_rate}"
+  end
+
+  private
+
+  def minutes_to_hours(mnts)
+    hrs = 0.0
+    while mnts > 0 do
+      if mnts > 60
+        hrs += 1.0
+        mnts -= 60
+      else
+        hrs += mnts / 60.0
+        mnts = 0
+      end
+    end
+    hrs
+  end
+
+  def hourly_rate
+    Organisation.find_by(id: self.organisation_id).hourly_rate
   end
 end

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'edit_organisation/:id' => 'organisations#edit'
   post 'edit_organisation/:id' => 'organisations#update'
   get 'join_organisation/:id' => 'organisations#join'
+  get 'view_shifts/:id' => 'organisations#show'
 
   resources :users
 end

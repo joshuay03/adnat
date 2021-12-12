@@ -19,7 +19,7 @@
       <ul>
         <li>
           <%= organisation.name %>
-          <% if @user.organisation_id.present? %>
+          <% if @user.organisation_id.present? && @user.organisation_id == organisation.id%>
             <a href=<%= "/view_shifts/#{organisation.id}" %>>
               <input class="btn btn-tertiary" name="join_organisation" type="button" value="View Shifts" />
             </a>

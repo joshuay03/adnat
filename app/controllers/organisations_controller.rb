@@ -1,4 +1,15 @@
 class OrganisationsController < ApplicationController
+  def show
+    command = command_class::Show.call(params[:id])
+    @organisation = command.result
+    if command.success? && @organisation.present?
+      render 'show'
+    else
+      new
+      render 'new'
+    end
+  end
+
   def new
     @organisation = Organisation.new
     @target = @organisation
