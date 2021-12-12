@@ -1,4 +1,4 @@
-# README
+# Adnat
 
 Ruby on Rails Backend Challenge for Tanda
 
