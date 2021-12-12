@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   get 'create_shift/:organisation_id' => 'shifts#new'
   post 'create_shift/:organisation_id' => 'shifts#create'
   get 'edit_shift/:id' => 'shifts#edit'
-  post 'edit_shift/:id' => 'shifts#update'
+  patch 'edit_shift/:id' => 'shifts#update'
   get 'delete_shift/:id' => 'shifts#destroy'
 
   resources :users

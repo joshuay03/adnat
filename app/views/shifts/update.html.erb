@@ -1,8 +1,7 @@
 <div class="form-wrapper">
   <span class="title">Modify Shift at <%= @organisation.name %></span>
 
-  <%= form_for(@shift, url: '') do |f| %>
-
+  <%= form_for(@shift, url: "/edit_shift/#{@shift.id}") do |f| %>
     <%= f.label :start %>
     <div class="input-wrapper">
       <%= f.datetime_field :start, value: @shift.start, class: 'form-control' %>
@@ -23,7 +22,7 @@
     </div>
 
     <div class="btn-wrapper">
-      <a href=<%= "/view_shifts/#{@organisation.id}" %>>
+      <a href=<%= "/view_organisation/#{@organisation.id}" %>>
         <input class="btn btn-secondary" name="cancel" type="button" value="Cancel" />
       </a>
     </div>
