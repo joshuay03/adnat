@@ -66,6 +66,7 @@ a {
   border-radius: 8px;
   padding: 0 0.4rem;
   color: red;
+  margin: 0 4.5rem;
   margin-bottom: 2rem;
 }
 
@@ -98,15 +99,10 @@ a {
   &-tertiary {
     width: 4rem;
     background-color: thistle;
-    margin-left: 1rem;
+    margin-left: 0.1rem;
 
     &:hover {
       background-color: honeydew;
     }
   }
-}
-
-.flex-item {
-  width: 100%;
-  margin-bottom: 2rem;
 }

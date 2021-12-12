@@ -34,6 +34,7 @@ class UsersController < ApplicationController
       new
       render 'new'
     else
+      @target = @user
       render 'new'
     end
   end
