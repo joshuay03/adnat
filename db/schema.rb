@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2021_12_12_073345) do
     t.integer "break_length", default: 0, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "organisation_id"
+    t.integer "organisation_id", null: false
     t.index ["organisation_id"], name: "index_shifts_on_organisation_id"
     t.index ["user_id"], name: "index_shifts_on_user_id"
   end

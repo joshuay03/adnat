@@ -8,7 +8,7 @@
 #  start           :datetime         not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
-#  organisation_id :integer
+#  organisation_id :integer          not null
 #  user_id         :integer          not null
 #
 # Indexes

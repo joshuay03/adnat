@@ -8,7 +8,7 @@
 #  start           :datetime         not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
-#  organisation_id :integer
+#  organisation_id :integer          not null
 #  user_id         :integer          not null
 #
 # Indexes
@@ -21,9 +21,31 @@
 #  organisation_id  (organisation_id => organisations.id)
 #
 class Shift < ApplicationRecord
-  belongs_to :organisation, class_name: "organisation", foreign_key: "organisation_id"
+  belongs_to :organisation
+  belongs_to :user
 
   validates :start, presence: true
   validates :finish, presence: true
+  validates :organisation_id, presence: true
   validates :user_id, presence: true
+
+  def date
+    'test'
+  end
+
+  def start_time
+    ''
+  end
+
+  def finish_time
+    ''
+  end
+
+  def hours_worked
+    ''
+  end
+
+  def cost
+    ''
+  end
 end
